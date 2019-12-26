@@ -1,14 +1,14 @@
 import React from 'react';
 
+import Routes from '~/routes';
 import GlobalStyles from '~/theme/global';
-import { Main } from '~/pages';
 
 export default function App() {
   return (
     <div>
       <GlobalStyles />
 
-      <Main />
+      <Routes />
     </div>
   );
 }
