@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import useAxios from '~/services/api';
+// import useAxios from '~/services/api';
+import { ApplicationState } from '~/store';
 import { ExampleComponent } from '~/components';
+import * as PeopleActions from '~/store/modules/people/actions';
 
-interface Person {
-  name: string;
-}
+// interface Person {
+//   name: string;
+// }
 
 export default function Main() {
-  const [{ data, loading, error }] = useAxios<Person>('people/1');
+  const dispatch = useDispatch();
 
-  if (loading) return <span>Carregando...</span>;
-  if (error) return <span>{`ocorreu um error: ${error}`}</span>;
+  const people = useSelector((state: ApplicationState) => state.people.data);
 
-  return (
-    <ExampleComponent title={data.name} />
-  );
+  useEffect(() => {
+    dispatch(PeopleActions.loadRequest());
+  }, [dispatch]);
+
+  /** useAxios Example
+    const [{ data, loading, error }] = useAxios<Person>('people/1');
+
+    if (loading) return <span>Carregando...</span>;
+    if (error) return <span>{`ocorreu um error: ${error}`}</span>;
+  */
+
+  return <ExampleComponent title={people.name} />;
 }
