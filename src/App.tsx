@@ -1,7 +1,6 @@
 import React from 'react';
 
-import GlobalStyles from './theme/global';
-
+import GlobalStyles from '~/theme/global';
 
 export default function App() {
   return (

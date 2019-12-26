@@ -1,1 +1,2 @@
-/// <reference types="react-scripts" />
+//eslint-disable-line
+// / <reference types="react-scripts" />

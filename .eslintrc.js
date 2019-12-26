@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -46,14 +48,15 @@ module.exports = {
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
+    'import/extensions': 'off',
   },
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.js', '.jsx', '.ts', '.tsx'],
     },
     'import/resolver': {
-      node: {
-        paths: ['src'],
+      alias: {
+        map: [['~', './src']],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
