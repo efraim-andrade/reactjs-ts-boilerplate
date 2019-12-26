@@ -49,6 +49,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     'import/extensions': 'off',
+    'arrow-parens': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
   settings: {
     'import/parsers': {

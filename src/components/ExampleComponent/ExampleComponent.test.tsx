@@ -5,7 +5,7 @@ import ExampleComponent from './index';
 
 describe('Components - ExampleComponent', () => {
   it('should be able to render component', () => {
-    const { container } = render(<ExampleComponent />);
+    const { container } = render(<ExampleComponent title="titulo" />);
 
     expect(container).toMatchSnapshot();
   });
