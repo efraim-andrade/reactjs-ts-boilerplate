@@ -2,10 +2,14 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function ExampleComponent() {
+interface Props {
+  title?: string;
+}
+
+export default function ExampleComponent({ title }: Props) {
   return (
     <Container>
-      <h1>sample</h1>
+      <h1>{title}</h1>
     </Container>
   );
 }
